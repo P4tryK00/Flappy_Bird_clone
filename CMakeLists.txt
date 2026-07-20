@@ -28,6 +28,9 @@ add_executable(${PROJECT_NAME} main.cpp
         ResourceManager.h
         TextureManager.cpp
         TextureManager.h
+        Pipe.cpp
+        Pipe.h
+        State.h
 )
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)

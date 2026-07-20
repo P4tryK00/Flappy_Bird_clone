@@ -3,3 +3,18 @@
 //
 
 #include "ResourceManager.h"
+
+#include "TextureManager.h"
+
+
+void ResourceManager::cleanUpAllResources()
+{
+
+}
+
+
+void ResourceManager::cleanUp()
+{
+    TextureManager::cleanup();
+    
+}

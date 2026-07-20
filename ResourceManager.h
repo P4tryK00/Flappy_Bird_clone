@@ -5,9 +5,12 @@
 #ifndef FLAPPY_BIRD_CLONE_RESOURCEMANAGER_H
 #define FLAPPY_BIRD_CLONE_RESOURCEMANAGER_H
 
+class ResourceManager {
+public:
+    ResourceManager() = delete;
 
-class ResourceManager
-{
+    static void loadAllResources();
+    static void cleanUpAllResources();
 };
 
 
