@@ -1,6 +1,7 @@
 #include "Bird.h"
 #include <iostream>
 #include <SFML/System.hpp>
+
 Bird::Bird() : texture_("Resources/Textures/Bird/bird_orange_0.png"), sprite_(texture_)
 {
     auto bounds = sprite_.getLocalBounds();

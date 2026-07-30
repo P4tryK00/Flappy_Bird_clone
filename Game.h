@@ -3,25 +3,35 @@
 
 #include <SFML/Graphics.hpp>
 #include "Bird.h"
+#include <memory>
+#include <string>
+#include <SFML/Graphics.hpp>
+#include "StateMachine.h"
+#include "DEFINITIONS.h"
+
+
+struct GameData {
+    StateMachine machine;
+    sf::RenderWindow window;
+};
+
+typedef std::shared_ptr<GameData> GameDataRef;
+
 
 class Game
 {
     public:
-    Game();
+    Game(int width, int height, std::string title);
     ~Game();
 
-    void update();
     void run();
-    void draw();
 
 
 
     private:
-    const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
-    sf::RenderWindow window_;
+    const sf::Time timePerFrame = sf::seconds(1.f / 60.f);
     sf::Clock clock_;
-    sf::Time timePassed_ = sf::Time::Zero;
-    Bird bird_;
+    GameDataRef m_data = std::make_shared<GameData>();
 };
 
 

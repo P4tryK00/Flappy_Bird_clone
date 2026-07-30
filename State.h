@@ -14,7 +14,7 @@ public:
     virtual ~State() {}
     virtual void init() = 0;
 
-    virtual void handleInput(sf::Event& event) = 0;
+    virtual void handleInput(const sf::Event& event) = 0;
     virtual void update(float dt) = 0;
     virtual void draw(float dt) = 0;
     virtual void pause() {}

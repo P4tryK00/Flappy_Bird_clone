@@ -31,6 +31,8 @@ add_executable(${PROJECT_NAME} main.cpp
         Pipe.cpp
         Pipe.h
         State.h
+        FontManager.cpp
+        FontManager.h
 )
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
