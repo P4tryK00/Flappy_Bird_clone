@@ -2,12 +2,12 @@
 #include <iostream>
 #include <SFML/System.hpp>
 
-Bird::Bird() : texture_("Resources/Textures/Bird/bird_orange_0.png"), sprite_(texture_)
+Bird::Bird() : texture_(BIRD_TEXTURE_PATH), sprite_(texture_)
 {
     auto bounds = sprite_.getLocalBounds();
     float targetHeight = static_cast<float>(SCREEN_HEIGHT) * 0.08f;
     float scale = targetHeight / bounds.size.y;
-    sprite_.setScale(sf::Vector2f(scale, scale));
+    sprite_.setScale(sf::Vector2f(scale * 0.7f, scale * 0.7f));
     sprite_.setPosition(sf::Vector2f(SCREEN_WIDTH / 4, static_cast<float>(y)));
 }
 

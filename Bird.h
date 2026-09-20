@@ -13,7 +13,8 @@ public:
     void draw(sf::RenderWindow& window) const;
     void update(sf::Time &dt);
     void tap();
-
+    sf::FloatRect getBounds() const { return sprite_.getGlobalBounds(); }
+    
 private:
     sf::Texture texture_;
     sf::Sprite sprite_;

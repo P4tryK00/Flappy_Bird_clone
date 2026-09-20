@@ -8,14 +8,18 @@
 #include "ResourceManager.h"
 #include "MenuState.h"
 
-Game::Game(int width, int height, std::string title)
+Game::Game()
 {
+    ResourceManager::loadAllResources();
     m_data->window.create(sf::VideoMode({SCREEN_WIDTH, SCREEN_HEIGHT}), TITLE, sf::Style::Close | sf::Style::Titlebar);
     m_data->window.setVerticalSyncEnabled(true);
-    m_data->machine.addState(std::make_unique<GameState>(m_data));
+    m_data->machine.addState(std::make_unique<MenuState>(m_data));
 }
 
-Game::~Game() = default;
+Game::~Game()
+{
+    ResourceManager::cleanUpAllResources();
+}
 
 void Game::run() {
     float newTime, frameTime, interpolation;

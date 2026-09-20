@@ -22,6 +22,8 @@ add_executable(${PROJECT_NAME} main.cpp
         StateMachine.h
         GameState.cpp
         GameState.h
+        GameOverState.cpp
+        GameOverState.h
         MenuState.cpp
         MenuState.h
         ResourceManager.cpp
